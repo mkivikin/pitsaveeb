@@ -64,26 +64,37 @@ function loginFunction($user, $password) {
 	<title>Sisselogimine</title>
 </head>
 <body>
-	<h1>Logi sisse!</h1>
+<div class="navbar">
+<a href="#">Menüü</a>
+<a href="#">Valmista oma pitsa</a>
+<a href="#">Meist</a>
+</div>
+<div class="main">
+	<span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 	<table class = login>
 		<tr>
-			<td><label>Kasutajanimi</label></td>
-			<td><input name="loginUsername" type="text" value="<?php echo $loginUser; ?>"></td>
+			<td colspan = "2"><label>Logi sisse!<label></td>
+		</tr>
+		<tr>
+			<td><label>Kasutajanimi: </label></td>
+			<td colspan="2"><input name="loginUsername" type="text" value="<?php echo $loginUser; ?>"></td>
 		</tr>
 		<tr>
 			<td><label>Parool: </label></td>
-			<td><input name="loginPassword" placeholder="Salasõna" type="password"></td>
+			<td colspan="2"><input name="loginPassword" placeholder="Salasõna" type="password"></td>
 		</tr>
 		<tr>	
-			<td><input name="signinButton" type="submit" value="Logi sisse" class = loginbuttons></td>
+			<td colspan="3"><input name="signinButton" type="submit" value="Logi sisse" class = loginbuttons></td>
 		</tr>
+		
 		<tr>	
-			<td><span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span></td>
+			
 			<td><label>Pole veel kasutaja?</label></td>
 			<td><input name="goToRegister" type="submit" value="Registreerima" class = loginbuttons></td>
 		</tr>
 	</table>
 	</form>
+</div>
 </body>
 </html>
