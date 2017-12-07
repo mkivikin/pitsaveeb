@@ -25,7 +25,7 @@
 	}
 	
 	if (isset($_POST["goToRegister"])) {
-		header("Location: main.php");
+		header("Location: register.php");
 	}
 
 function loginFunction($user, $password) {

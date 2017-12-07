@@ -35,8 +35,10 @@ input {
 .loginbuttons {
 	margin-left:auto;
     margin-right:auto;
-	background-color: #FFFFFF;
-	color: #5d1919;
+	/*background-color: #FFFFFF;*/
+	background-color: #5d1919;
+	color: #FFFFFF;
+	/*color: #5d1919;*/
 	border: none;
 	padding: 5px;
 	text-align: center;
