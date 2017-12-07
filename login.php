@@ -3,6 +3,11 @@
 	$notice = "";
 	$loginUser = "";
 	$loginPasswordError = "";
+	$success = "";
+	if ($_GET['success']) {
+		$success = "Olete edukalt registreerinud";
+	}
+	
 	if (isset($_POST["signinButton"])) {
 		if (isset($_POST["loginUsername"])) {
 			if (!empty($_POST["loginUsername"])) {
@@ -73,6 +78,9 @@ function loginFunction($user, $password) {
 	<span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 	<table class = login>
+		<tr>
+			<td colspan = "2"><span><?php echo $success; ?></span></td>
+		</tr>
 		<tr>
 			<td colspan = "2"><label>Logi sisse!<label></td>
 		</tr>

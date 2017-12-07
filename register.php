@@ -89,14 +89,16 @@ if (isset($_POST["signupButton"])) {
 		}
 		
 		if(isset($_POST["signupPassword"])) {
-			if(($_POST["signupPassword"]).len < 8)
+			if(strlen($_POST["signupPassword"]) < 8) {
 				$signupPasswordError = "Parool on liiga lühike";
 			}
+		}
 		
 	if(empty ($signupFirstNameError) and empty($signupLastNameError) and empty($signupUserNameError) and empty($signupBirthDayError) and empty($signupEmailError) and empty($signupPhoneError) and empty($signupPasswordError) and !empty($_POST["signupPassword"])) {
 			$signupPassword = hash("sha512", $_POST["signupPassword"]);
 			$signupGender = $_POST["signupGender"];
 			register_function($_POST["signupUser"], $signupPassword, $_POST["signupEmail"], $_POST["signupFirstName"], $_POST["signupFamilyName"],$signupGender ,$signupPhone, $signupBirthDate);
+			
 	}
 }
 	
@@ -115,11 +117,14 @@ function register_function($userName, $password, $email, $firstName, $lastName, 
 		$stmt->bind_param("ssssisss", $userName, $firstName, $lastName, $phone, $gender, $email, $password, $birthday);
 		if ($stmt->execute()) {
 			$notice = "Registreerimine õnnestus";
+			header("Location: login.php?success=true");
 		} else {
 			$notice = "Registreerumine ebaõnnestus";
 		}
 		$stmt->close();
 		$mysqli->close();
+		header("Location: login.php");
+		exit();
 }
 function test_input($data) {
 		$data = trim($data); //eemaldab lõpust tühiku
@@ -138,10 +143,18 @@ function test_input($data) {
 	<title>Registreerimine</title>
 </head>
 <body>
+<div class="ostukorv">
+	<a href="main.php"><img src="Graafika/ostukorv.png" alt="Logo"></a>
+</div>
+<div class="logo">
+	<a href="main.php"><img src="Graafika/logo.png" alt="Logo"></a>
+</div>
+
+
 <div class="navbar">
-<a href="#">Menüü</a>
-<a href="#">Valmista oma pitsa</a>
-<a href="#">Meist</a>
+<ul>
+<li><a href="tellimine.php">Menüü</a></li>
+</ul>
 </div>
 	</form>	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 	<table class = login>
