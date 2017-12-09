@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url("graafika/tw-cen-mt-condensed-extra-bold/TCCEB.TTF") format("truetype");
+}
+
+body {
+    margin: 0;
+    background: url("Graafika/oigebackground.jpg");
+    background-size:contain;
+    background-position:center;
+
+}
+
+.main {
+
+
+}
+
+.container {
+    font-family: "My Custom Font";
+    max-width: 90%;
+    padding: 0;
+
+}
+
+.navbar {
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.nav-upper{
+    width: 100%;
+    background-color: #7e1717;
+    height: 5em;
+    display: flex;
+    align-items: center;
+}
+
+.nav-telli {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.nav-telli a {
+    font-size: 1.7em;
+    padding-left: 1.3em;
+}
+
+.nav-ostukorv{
+    height: 3.3em;
+    position: absolute;
+    right: 1.5em;
+
+}
+
+.nav-bottom {
+    width: 100%;
+    background-color: #560808;
+    height: 2em;
+}
+
+.nav-logins{
+    float: right;
+    display: flex;
+    padding-right: 2em;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-logins-registreeri{
+
+    padding-right: 1em;
+    color: #900c0c;
+}
+
+
+.nav-logins-logisisse{
+    padding-right: 1em;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    margin-left: -125px;
+    top: 20px;
+}
+
+.nav-logo img {
+    max-width: 250px;
+}
+
+.main-section .container {
+    margin-top: 2em;
+}
+
+.valmistamine {
+
+    height: 100%;
+}
+
+.tee-pitsa {
+
+    margin-top: 3em;
+    height: 3em;
+    color: #FFFFFF;
+    opacity: 0.8;
+    background-color: #560808;
+    border-radius: 10px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+
+
+}
+
+.viimati-valmistatud {
+
+
+    margin-top: 1.5em;
+    color: #7e1717;
+    background-color: #FFFFFF;
+    opacity: 0.6;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    height: 15em;
+    padding: 1em;
+
+}
+
+.pitsakarp {
+    height: 100%;
+
+}
+
+.populaarne {
+    color: #fff;
+    background-color: #560808;
+    padding: 0.5em 2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+
+.card {
+    background-color: rgba(255,255,255, 0.5);
+    align-items: center;
+
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.card-img-bottom {
+    padding: 2em 2em 0em 2em;
+}
+
+.lisakorvi {
+    text-align: center;
+    background-color: #900c0c;
+    color: #FFFFFF;
+    width: 50%;
+    border-radius: 10%;
+    padding: 0.2em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    opacity: 0.9;
+
+}
+
