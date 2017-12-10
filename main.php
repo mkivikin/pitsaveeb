@@ -39,7 +39,7 @@
                 <div class="valmistamine col-md-6">
                     <div class="row">
                         <div class="tee-pitsa col-md-12">
-                            <div>TEE OMA PITSA VALMIS SIIN</div>
+                            <div><a href="test.php">TEE OMA PITSA VALMIS SIIN<a></div>
                         </div>
                     </div>
                     <div class="row">

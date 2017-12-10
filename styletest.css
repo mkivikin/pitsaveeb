@@ -20,7 +20,7 @@ padding: 30px;
 .toppings-outer { 
 overflow: scroll; 
 float: left;
-width: 270px;
+width: 215px;
 height: 900px;
 margin: 0 auto;
 overflow-x: auto;
@@ -52,7 +52,7 @@ width: 250px;
 .bottoms-outer { 
 overflow: scroll; 
 width: 85%; 
-height: 265px; 
+height: 215px; 
 overflow-y: auto;
 float: right;
 background-color:rgba(255, 255, 255, .5);
@@ -64,4 +64,8 @@ width: 2500px;
 
 .bottoms-inner p {
 	margin: 50%;
+}
+
+.pizzabuttons {
+	float: left;
 }

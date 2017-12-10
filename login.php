@@ -1,13 +1,14 @@
 <?php
 	require("../../config.php");
+	require("functions.php");
 	$notice = "";
 	$loginUser = "";
 	$loginPasswordError = "";
 	$success = "";
-	if ($_GET['success']) {
-		$success = "Olete edukalt registreerinud";
+	if(isset ($_SESSION["userID"])){
+		header("Location: test.php");
+		exit();
 	}
-	
 	if (isset($_POST["signinButton"])) {
 		if (isset($_POST["loginUsername"])) {
 			if (!empty($_POST["loginUsername"])) {
@@ -18,7 +19,7 @@
 			}
 		}
 		if (isset($_POST["loginPassword"])) {
-			if (!empty($_POST["loginPassword"])) {
+			if (empty($_POST["loginPassword"])) {
 				$loginPasswordError = "Sisselogimiseks on vaja sisestada parool";
 			}
 			else {
@@ -32,33 +33,6 @@
 	if (isset($_POST["goToRegister"])) {
 		header("Location: register.php");
 	}
-
-function loginFunction($user, $password) {
-	$database = "if17_marek6";
-	$notice = "";
-	$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"],$GLOBALS["serverPassword"], $database);
-	$stmt = $mysqli->prepare("SELECT user_id, user_name,user_password, user_rank FROM users WHERE user_name = ?");
-	$stmt->bind_param("s", $user);
-	$stmt->bind_result($idDb, $userDb, $pwDb, $rankDb);
-	$stmt->execute();
-	if ($stmt->fetch()){
-		$hash = hash("sha512", $password);
-			if($hash == $pwDb) {
-				$notice = "Said sisselogitud";
-				$_SESSION["userID"] = $idDb;
-				$_SESSION["userName"] = $userDb; 
-				$_SESSION["userRank"] = $rankDb;
-				header("Location: main.php");
-				exit();
-			} else {
-				$notice = "Teie sisestatud parool või kasutajanimi on vale";
-			}
-			
-	}
-	$mysqli->close();
-	$stmt->close();
-	return $notice;
-}
 ?>
 
 <!DOCTYPE html>
@@ -69,11 +43,11 @@ function loginFunction($user, $password) {
 	<title>Sisselogimine</title>
 </head>
 <body>
-<div class="navbar">
+<!--<div class="navbar">
 <a href="#">Menüü</a>
 <a href="#">Valmista oma pitsa</a>
 <a href="#">Meist</a>
-</div>
+</div>-->
 <div class="main">
 	<span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

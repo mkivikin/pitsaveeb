@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    background: url("Graafika/oigebackground.jpg");
+    background-size:contain;
+    background-position:center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+label:before {
+  background-color: white;
+  color: white;
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  border: 1px solid grey;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  transition-duration: 0.4s;
+  transform: scale(0);
+}
+
+label img {
+  height: 150px;
+  width: 150px;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+}
+
+:checked + label {
+  border-color: #ddd;
+  background-color: rgba(155, 155, 155, .5);
+}
+
+:checked + label:before {
+  content: "✓";
+  background-color: grey;
+  transform: scale(1);
+}
+
+:checked + label img {
+  transform: scale(0.9);
+  box-shadow: 0 0 5px #333;
+  z-index: -1;
+}
+
+.toppings-outer { 
+overflow: scroll; 
+float: left;
+width: 265px;
+height: 80%;
+margin-top:3%;
+margin-left:5%;
+overflow-x: auto;
+position:absolute;
+background-color:rgba(255, 255, 255, .5);
+}
+
+.toppings-inner { 
+width: 190px; 
+}
+
+.bottoms-container {
+	padding-top: 600px;
+}
+
+.bottoms-outer { 
+overflow: scroll; 
+width: 75%;
+height: 265px;
+overflow-y: auto;
+float: right;
+margin-right:5%;
+background-color:rgba(255, 255, 255, .5);
+}
+
+.bottoms-inner { 
+width: 2500px; 
+}
+
+.pizza-outer {
+	background-color:rgba(255, 255, 255, .5);
+	width: 75%;
+	height: 585px;
+	float: right;
+	margin-right:5%;
+	margin-top:3%;
+}
+
+.pizza-inner {
+	margin: auto;
+    width: 37.5%;
+    padding: 10px;
+}
+
+.pizzabuttons {
+	float: right;
+}
