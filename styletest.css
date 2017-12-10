@@ -14,13 +14,13 @@ min-height: 10%
 }
 
 .body {
-padding: 60px;
+padding: 30px;
 }
 
 .toppings-outer { 
 overflow: scroll; 
 float: left;
-width: 215px;
+width: 270px;
 height: 900px;
 margin: 0 auto;
 overflow-x: auto;
@@ -28,20 +28,40 @@ overflow-x: auto;
 background-color:rgba(255, 255, 255, .5);
 }
 .toppings-inner { 
-width: 190px; 
+width: 250px; 
+}
+
+.pizza-outer {
+	background-color:rgba(255, 255, 255, .5);
+	width: 74.3%;
+	/*height: 675px;*/
+	float: right;
+	margin-right:200px;
+}
+
+.pizza-inner {
+	margin-right: 100px;
+    width: 32.5%;
+    padding: 10px;
 }
 
 .bottoms-cont {
-	padding-top: 685px;
+	padding-top: 600px;
 }
+
 .bottoms-outer { 
 overflow: scroll; 
 width: 85%; 
-height: 215px; 
+height: 265px; 
 overflow-y: auto;
+float: right;
 background-color:rgba(255, 255, 255, .5);
 }
 
 .bottoms-inner { 
 width: 2500px; 
+}
+
+.bottoms-inner p {
+	margin: 50%;
 }
