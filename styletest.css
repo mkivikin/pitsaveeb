@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background: url("Graafika/oigebackground.jpg");
+    background-size:contain;
+    background-position:center;
+}
+.container {
+min-height:100%;
+position:relative;
+}
+
+.header {
+min-height: 10%
+}
+
+.body {
+padding: 60px;
+}
+
+.toppings-outer { 
+overflow: scroll; 
+float: left;
+width: 215px;
+height: 900px;
+margin: 0 auto;
+overflow-x: auto;
+/*position:absolute;*/
+background-color:rgba(255, 255, 255, .5);
+}
+.toppings-inner { 
+width: 190px; 
+}
+
+.bottoms-outer { 
+overflow: scroll; 
+width: 80%; 
+height: 215px; 
+overflow-y: auto;
+background-color:rgba(255, 255, 255, .5);
+}
+
+.bottoms-inner { 
+width: 2500px; 
+}
