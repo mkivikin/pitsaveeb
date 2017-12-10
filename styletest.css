@@ -31,9 +31,12 @@ background-color:rgba(255, 255, 255, .5);
 width: 190px; 
 }
 
+.bottoms-cont {
+	padding-top: 685px;
+}
 .bottoms-outer { 
 overflow: scroll; 
-width: 80%; 
+width: 85%; 
 height: 215px; 
 overflow-y: auto;
 background-color:rgba(255, 255, 255, .5);

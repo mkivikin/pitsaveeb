@@ -29,6 +29,7 @@
 			<a href="Graafika/pizza_create_pics/meat/sausage.png"><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a><br>
 		</div><!-- end toppings-inner -->
 	</div><!-- end toppings-outer -->
+	<div class="bottoms-cont">
 	<div class="bottoms-outer">
 		<div class="bottoms-inner">
 			<a href="Graafika/pizza_create_pics/meat/sausage.png"><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a>
@@ -44,6 +45,7 @@
 			<a href="Graafika/pizza_create_pics/meat/sausage.png"><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a>
 		</div><!-- end bottoms-inner -->
 	</div><!-- end bottoms-outer -->
+	</div><!-- end bottoms-cont -->
 	</div><!-- end body -->
 </div><!-- end container -->
 </body>
