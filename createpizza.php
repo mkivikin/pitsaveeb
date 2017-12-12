@@ -5,10 +5,12 @@
 		header("Location: login.php");
 		exit();
 	}
+	//echo $_SESSION["userID"];
+	$name = "test";
 	echo(loadPizza($_SESSION["userID"]));
 	if (isset ($_POST["pizzaCreate"])) {
 		$toppings = $_POST['toppings'];
-			if(empty($toppings)) {
+			/*if(empty($toppings)) {
 				echo("Te ei valinud ühtegi toppingut");
 			} else {
 				$N = count($toppings);
@@ -16,7 +18,9 @@
 				for($i=0; $i < $N; $i++) {
 					echo($toppings[$i] . " ");
 				}
-			}
+			}*/
+			updatePizza($name,$toppings, $_SESSION["userID"]);
+			header("location:createpizza.php");
 	}
 	function loadPizza($userid) {
 		$database = "if17_marek6";
@@ -38,12 +42,47 @@
 				$notice .= $toppingName .' $' .$toppingPrice. '<br>';
 			}
 			} else {
-			//Create pizza funktsioon, kus pole veel komponente ja, et kuvaks tühja pitsapõhja
-			$notice = "Te pole veel pitsat loonud";
+				createPizza($userid);
 			}
 			return $notice;
 	}	// loadPizza lõpp
 	
+	function createPizza($userid) {
+		$database = "if17_marek6";
+		$notice = "";
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"],$GLOBALS["serverPassword"], $database);
+		$stmt = $mysqli->prepare("INSERT INTO pizzas (user_id) VALUES (?)");
+		$stmt->bind_param("i", $userid);
+		$stmt->execute();
+		if ($stmt->execute()) {
+			$notice = "Pizza edukalt loodud";
+		} else {
+			
+		}
+	}
+	function updatePizza($pizzaname, $toppings, $userid) {
+		$database = "if17_marek6";
+		$notice = "";
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"],$GLOBALS["serverPassword"], $database);
+		$stmt = $mysqli->prepare("SELECT pizza_id FROM pizzas WHERE user_id = ? ORDER BY created DESC Limit 1");
+		$stmt->bind_param("i", $userid);
+		$stmt->bind_result($pizzaID);
+		$stmt->execute();
+		echo $stmt->fetch();
+		if ($stmt->execute()) {
+			echo $pizzaID;
+			$stmt->close();
+			foreach ($toppings as $key=>$value) {
+				$stmt = $mysqli->prepare("INSERT INTO toppingonpizza (topping_id, pizza_id) VALUES (?, ?)");
+				$topping = $toppings[$key];
+				$stmt->bind_param("ii", $topping, $pizzaID);
+				$stmt->execute();
+				echo $stmt->error;
+				$stmt->close();
+		}
+		}
+		
+	}
 	
 	function laeVeged() {
 		$database = "if17_marek6";
