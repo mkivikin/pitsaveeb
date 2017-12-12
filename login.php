@@ -6,7 +6,7 @@
 	$loginPasswordError = "";
 	$success = "";
 	if(isset ($_SESSION["userID"])){
-		header("Location: test.php");
+		header("Location: main.php");
 		exit();
 	}
 	if (isset($_POST["signinButton"])) {

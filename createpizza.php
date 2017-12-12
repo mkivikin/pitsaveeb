@@ -1,8 +1,13 @@
 <?php
 	require("../../config.php");
 	require("functions.php");
-	if (isset ($_GET["pizzaCreate"])) {
-		$toppings = $_GET['toppings'];
+	if(!(isset ($_SESSION["userID"]))){
+		header("Location: login.php");
+		exit();
+	}
+	echo(loadPizza($_SESSION["userID"]));
+	if (isset ($_POST["pizzaCreate"])) {
+		$toppings = $_POST['toppings'];
 			if(empty($toppings)) {
 				echo("Te ei valinud ühtegi toppingut");
 			} else {
@@ -13,6 +18,33 @@
 				}
 			}
 	}
+	function loadPizza($userid) {
+		$database = "if17_marek6";
+		$notice = "";
+		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"],$GLOBALS["serverPassword"], $database);
+		$stmt = $mysqli->prepare("SELECT pizza_id FROM pizzas WHERE user_id = ? ORDER BY created DESC Limit 1");
+		$stmt->bind_param("i", $userid);
+		$stmt->bind_result($pizzaID);
+		$stmt->execute();
+		if ($stmt->fetch()) {
+			$mysqli->close();
+			$stmt->close();
+			$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"],$GLOBALS["serverPassword"], $database);
+			$stmt = $mysqli->prepare("SELECT toppingonpizza.topping_id, toppings.topping_name, toppings.topping_price FROM pizzas INNER JOIN toppingonpizza on toppingonpizza.pizza_id = pizzas.pizza_id INNER JOIN toppings on toppingonpizza.topping_id = toppings.topping_id  WHERE pizzas.pizza_id = ?");
+			$stmt->bind_param("i", $pizzaID);
+			$stmt->bind_result($toppingID, $toppingName, $toppingPrice);
+			$stmt->execute();
+			while ($stmt->fetch()) {
+				$notice .= $toppingName .' $' .$toppingPrice. '<br>';
+			}
+			} else {
+			//Create pizza funktsioon, kus pole veel komponente ja, et kuvaks tühja pitsapõhja
+			$notice = "Te pole veel pitsat loonud";
+			}
+			return $notice;
+	}	// loadPizza lõpp
+	
+	
 	function laeVeged() {
 		$database = "if17_marek6";
 		$notice = "";
@@ -23,12 +55,12 @@
 		$stmt->execute();
 		while ($stmt->fetch()) {
 			//<a href="toppings/". $toppingpng .><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a>
-			$notice .='<li><input type="checkbox" id="cb'.$topping_id.'" name="toppings[]"/> <label for="cb'.$topping_id.'"><img src ="'.$folder.$toppingpng.'"/></label>';
+			$notice .='<li><input type="checkbox" id="cb'.$topping_id.'" name="toppings[]" value="'.$topping_id.'" /> <label for="cb'.$topping_id.'"><img src ="'.$folder.$toppingpng.'"/></label>';
 		}
 		$mysqli->close();
 		$stmt->close();
 		return $notice;
-		}
+	} //laeVeged lõpp
 		
 	function laeLihad() {
 		$database = "if17_marek6";
@@ -42,13 +74,13 @@
 			//<a href="toppings/". $toppingpng .><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a>
 			//$notice .= '<a href=?' .$toppingName .'><img src ="toppings/' .$toppingpng .'" height="250" /></a>';
 			//$notice .= '<img src ="toppings/' .$toppingpng .'" height="250" /><input type = "checkbox" name = "topping" value="'.$toppingName.'"><br>';
-			$notice .='<li><input type="checkbox" id="cb'.$topping_id.'" name="toppings[]" /> <label for="cb'.$topping_id.'"><img src ="'.$folder.$toppingpng.'"/></label>';
+			$notice .='<li><input type="checkbox" id="cb'.$topping_id.'" name="toppings[]" value="'.$topping_id.'" /> <label for="cb'.$topping_id.'"><img src ="'.$folder.$toppingpng.'"/></label>';
 		}
 		$mysqli->close();
 		$stmt->close();
 		return $notice;
-	}
-?>
+	} //laeLihad lõpp
+ ?>
 
 <!DOCTYPE html>
 <html lang="et">
@@ -58,7 +90,7 @@
 	<title>Valmista Pitsa</title>
 </head>
 <body>
-<form method = "GET">
+<form method = "POST">
 	<div class="toppings-outer">
 		<div class="toppings-inner">
 				<ul name="Lihad">
@@ -69,7 +101,8 @@
 	<div class="pizza-outer">
 		<div class="pizza-inner">
 			<a href="toppings/bottom.png"><img src="toppings/bottom.png" height="550" /></a>
-			<input class="pizzabuttons" name ="pizzaCreate" type="submit" value="Submit">
+			<input class="pizzaName" name ="pizzaCreateName" type="text" placeholder="Nimeta Pizza">
+			<input class="pizzabuttons" name ="pizzaCreate" type="submit" value="Loo Pizza">
 		</div><!-- pizza-inner -->
 	</div><!-- pizza-outer -->
 <div class="bottoms-container">
