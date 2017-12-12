@@ -1,26 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Epic Pizza</title>
+    <title>Hello, world!</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-<div class="container main">
+<div class="webpage container">
     <section class="navigation">
-        <div class="container">
-            <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light text-white">
                 <div class="nav-upper">
                     <div class="nav-telli"><a>TELLI KOHE: 56942834</a></div>
                     <img class="nav-ostukorv" src="Graafika/ostukorv.png">
                 </div>
-                <div class="nav-bottom">
+                <div class="nav-bottom bg-red">
                     <div class="nav-logins">
                         <div class="nav-logins-registreeri">registreeri</div>
                         <div class="nav-logins-logisisse">LOGI SISSE</div>
@@ -34,16 +33,16 @@
         </div>
     </section>
     <section class="main-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="valmistamine col-md-6">
                     <div class="row">
-                        <div class="tee-pitsa col-md-12">
-                            <div><a href="createpizza.php">TEE OMA PITSA VALMIS SIIN<a></div>
+                        <div class="tee-pitsa col-md-12 bg-red text-white">
+                            <div>TEE OMA PITSA VALMIS SIIN</div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="viimati-valmistatud col-md-12">
+                        <div class="viimati-valmistatud col-md-12 bg-faded-white">
                             Viimati valmistatud pitsa:
                             <div class="col-md-12">
                                 Siin pitsa
@@ -53,55 +52,59 @@
 
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <img class="pitsakarp" src="Graafika/pitsakarp.png">
+                <div class="col-md-6 ">
+                    <img class="pitsakarp img-fluid" src="Graafika/pitsakarp.png">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="populaarne">HETKEL POPULAARNE:</div>
+                <div class="populaarne bg-red text-white">HETKEL POPULAARNE:</div>
             </div>
             <div class="row justify-content-center">
-                <div class="card-deck">
-                    <div class="card">
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
                         <div class="card-block">
                             <h4 class="card-title">OLIVE</h4>
                         </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/1.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/2.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/3.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/4.png" alt="Card image cap">
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/1.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/2.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/3.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/4.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
