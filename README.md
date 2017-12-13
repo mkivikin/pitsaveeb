@@ -11,6 +11,7 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	4) loeb andmebaasist komponente
 	5) kasutaja näeb oma valmistatud pitsat
 	6) näitab esilehel viimati valminud pitsat
+	Need tegemata
 	7) kasutaja näeb oma valitud komponente ja nende hindu listina kõrval, saab neid eemaldada
 	8) lisab pitsad andmebaasi
 	9) kasutaja näeb kogu pitsa hinda
@@ -18,7 +19,6 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	11) kasutaja saab esitada tellimust
 	12) pealehe all kuvab enim tellitud pitsasid ja nendele vajutades lisab ta selle ostukorvi
 	13) pitsadele saab arvustusi jätta
-7-13 puudu
 ![alt text](https://i.imgur.com/Nr3cU2V.jpg)
 
 ## Mida õppisid juurde?
@@ -29,9 +29,13 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	3) listidega tegelemine
 	4) Edaspidi uurin teostatavust hetkeste teadmiste põhjal.
 	5) Rohkem oleks vaja omavahel suhelda
-	5) Githubi paremini kasutama & Githubi readme'd kirjutama
+	6) Githubi paremini kasutama & Githubi readme'd kirjutama
 
 ### Tuule:
+	1) CSSi, bootstrappide ja klasside kasutamise oskus arenes päris palju. 
+	2) Põnevate plaanide teostamine võib lõpuks üpris keeruliseks kujuneda. 
+	3) Giti kasutamine on grupitööde puhul väga oluline, muidu võib minna veidi lappesse.
+	4) Muidu oli lahe proovida koostööna veebilehte luua. Erinevus on päris suur, kui teha midagi üksi või mitmekesi.
 
 ### Katri:
 
