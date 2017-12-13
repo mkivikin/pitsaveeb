@@ -195,14 +195,12 @@ function test_input($data) {
                     <img class="nav-ostukorv" src="Graafika/ostukorv.png">
                 </div>
                 <div class="nav-bottom bg-red">
-                    <div class="nav-logins">
-                        <div class="nav-logins-registreeri">registreeri</div>
-                        <div class="nav-logins-logisisse">LOGI SISSE</div>
-                    </div>
                 </div>
+                <a href="main.php">
                 <div class="nav-logo">
                     <img src="Graafika/logo.png">
                 </div>
+                </a>
             </nav>
 
         </div>
