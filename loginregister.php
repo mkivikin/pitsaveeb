@@ -177,7 +177,7 @@ function test_input($data) {
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Hello, world!</title>
+    <title>Sisene veebi</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -185,6 +185,7 @@ function test_input($data) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
 <div class="webpage container">
@@ -214,34 +215,44 @@ function test_input($data) {
 
                 <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md text-white bg-red">
-                            <h4>REGISTREERI</h4>
+                        <div class="col-md text-white bg-red loginHeading">
+                            <p>REGISTREERI</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md bg-faded-white registreeri-form d-flex align-items-center">
+                        <div class="col-md bg-faded-white registreeri-form d-flex align-items-center padup">
                             <div class="container">
                                 <form class="" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
                                     <span class="warning"><?php echo $signupPasswordError; ?> </span>
-                                    <div class="form-group">
-                                        <label for="signup-user">Kasutajanimi</label>
-                                        <input type="text" class="form-control" id="signup-user" name="signupUser" value="" required>
+                                    <div class="form-group row">
+                                        <label for="signup-user" class="col-sm-4 col-form-label">Kasutajanimi</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="signup-user" name="signupUser" value="" required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-pw">Salasõna</label>
+                                    <div class="form-group row">
+                                        <label for="signup-pw" class="col-sm-4 col-form-label">Salasõna</label>
+                                        <div class="col-sm-8">
                                         <input name="signupPassword" type="password" id="signup-pw" class="form-control" required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-email">Email</label>
+                                    <div class="form-group row">
+                                        <label for="signup-email" class="col-sm-4 col-form-label">Email</label>
+                                        <div class="col-sm-8">
                                         <input name="signupEmail" type="email" class="form-control" id="signup-email" placeholder="" required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-firstname">Eesnimi</label>
+                                    <div class="form-group row">
+                                        <label for="signup-firstname" class="col-sm-4 col-form-label">Eesnimi</label>
+                                        <div class="col-sm-8">
                                         <input name="signupFirstName" value="" type="text" class="form-control" id="signup-firstname" placeholder="" required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-familyname">Perenimi</label>
+                                    <div class="form-group row">
+                                        <label for="signup-familyname" class="col-sm-4 col-form-label">Perenimi</label>
+                                        <div class="col-sm-8">
                                         <input name="signupFamilyName" value="" type="text" class="form-control" id="signup-familyname" placeholder="" required>
+                                        </div>
                                     </div>
                                      <div class="form-group">
                                         <label>Sünnikuupäev</label>
@@ -249,18 +260,22 @@ function test_input($data) {
                                             <?php echo "\n <br> \n" .$signupDaySelectHTML ."\n" .$signupMonthSelectHTML ."\n" .$signupYearSelectHTML ."\n <br> \n";$signupMonthSelectHTML;?>     
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-number">Number</label>
+                                    <div class="form-group row">
+                                        <label for="signup-number" class="col-sm-4 col-form-label">Number</label>
+                                        <div class="col-sm-8">
                                         <input name="signupNumber" value="" type="text" class="form-control" id="signup-number" placeholder="" required>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="signup-gender">Sugu</label>
+                                    <div class="form-group row">
+                                        <label for="signup-gender" class="col-sm-4 col-form-label">Sugu</label>
+                                        <div class="col-sm-8">
                                         <select class="form-control" name="signupGender" type="number" id="signup-gender">
                                             <option value="1">Mees</option>
                                             <option value="2">Naine</option>
                                         </select>
                                     </div>
-                                    <button class="btn btn-primary" name="signupButton" type="submit" value="Loo kasutaja">Loo kasutaja</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-red full" name="signupButton" type="submit" value="Loo kasutaja">Loo kasutaja</button>
                                 </form>
                             </div>
                         </div>
@@ -271,12 +286,12 @@ function test_input($data) {
                 </div>
                 <div class="col-md-4">
                     <div class="row">
-                        <div class="col-md text-white bg-red">
-                            <h4>LOGI SISSE</h4>
+                        <div class="col-md text-white bg-red loginHeading">
+                            <p>LOGI SISSE</p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md bg-faded-white logisisse-form d-flex align-items-center">
+                        <div class="col-md bg-faded-white logisisse-form d-flex align-items-center padup">
                             <form class="container" method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" >
                                 <span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span>
                                 <span><?php echo $success; ?></span>
@@ -289,13 +304,15 @@ function test_input($data) {
                                     <input type="password" class="form-control" id="logisisse-pw" name="loginPassword" placeholder="Salasõna">
                                 </div>
 
-                                <button class="btn btn-primary" name="signinButton" type="submit" value="Logi sisse">Logi sisse</button>
+                                
 
                             </form>
                         </div>
                     </div>
                     <div class="row">
-
+                            
+                            <button class="btn btn-primary btn-red full" id="loginButton" name="signinButton" type="submit" value="Logi sisse">Logi sisse</button>
+                        
                     </div>
                 </div>
 

@@ -1,15 +1,17 @@
-@font-face {
+/*@font-face {
     font-family: "My Custom Font";
     src: url("graafika/tw-cen-mt-condensed-extra-bold/TCCEB.TTF") format("truetype");
-}
+}*/
 
 body {
     background: url("Graafika/oigebackground.jpg");
     background-size:contain;
     background-position:center;
-    font-family: "My Custom Font";
+    font-family: 'Oswald', sans-serif;
 
 }
+
+
 
 .webpage {
 
@@ -201,13 +203,34 @@ body {
     overflow-y: scroll;
 }
 
-
-
-
 .logisisse-form {
     overflow-scrolling: auto;
 }
 
+.btn-red {
+    background-color: #900c0c;
+    height: 45px;
+    border-color: #7e1717;
+}
 
+.btn-red:hover {
+    background-color: #000000;
+}
 
+.full {
+    width: 100%;
+}
 
+#loginButton {
+    margin-top: 15px;
+}
+
+.loginHeading {
+    display: flex;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.padup {
+    padding-top: 15px;
+}
