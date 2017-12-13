@@ -1,29 +1,38 @@
-<!doctype html>
+<?php session_start(); ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Epic Pizza</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css">
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 <body>
-<div class="webpage container">
+<div class="container main">
     <section class="navigation">
-        <div class="container-fluid">
-            <nav class="navbar navbar-light bg-light text-white">
+        <div class="container">
+            <nav class="navbar navbar-light bg-light">
                 <div class="nav-upper">
                     <div class="nav-telli"><a>TELLI KOHE: 56942834</a></div>
                     <img class="nav-ostukorv" src="Graafika/ostukorv.png">
                 </div>
-                <div class="nav-bottom bg-red">
+                <div class="nav-bottom">
                     <div class="nav-logins">
                         <div class="nav-logins-registreeri">registreeri</div>
-                        <div class="nav-logins-logisisse">LOGI SISSE</div>
+                        <div class="nav-logins-logisisse"> 
+						<?php
+						if(isset($_SESSION["userID"])) {
+							echo '<a href= "logout.php"> LOGI VÄLJA </a>';
+						}else{
+							echo '<a href= "login.php"> LOGI SISSE </a>';
+						}
+						?>
+						</div>
                     </div>
                 </div>
                 <div class="nav-logo">
@@ -34,78 +43,93 @@
         </div>
     </section>
     <section class="main-section">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="valmistamine col-md-6">
                     <div class="row">
-                        <div class="tee-pitsa col-md-12 bg-red text-white">
-                            <div>TEE OMA PITSA VALMIS SIIN</div>
+                        <div class="tee-pitsa col-md-12">
+							<?php 
+							
+							//pitsavalimise lingi anname siis, kui kasutaja on sisse loginud 
+							if(isset($_SESSION["userID"])) {
+								echo '<div><a href="test.php">TEE OMA PITSA VALMIS SIIN<a></div>';
+							}else{
+								echo '<div>Pitsa valimiseks logi sisse!</div>';
+							}
+							?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="viimati-valmistatud col-md-12 bg-faded-white">
+                        <div class="viimati-valmistatud col-md-12">
                             Viimati valmistatud pitsa:
-                            <div class="col-md-12">
-                                Siin pitsa
+                            <div class="col-md-12">                  
+								<?php 
+								
+								//kui lisad valitud, näitab valmis pilti
+								if(isset($_SESSION["userPizza"])) {
+									echo '<img src="'.$_SESSION["userPizza"].'" alt="userPizza" height="300"  />';
+									
+									//kustutab muutuja ära, kui kasutaja värskendab brauserit, ei näe ta enam pilti(see oli taotuslik) (võib kasutada funktsiooni unlink -kustutab faili füüsiliselt)
+									unset($_SESSION["userPizza"]);
+								}else{
+									echo "Siin pitsa";
+								}
+								?>
                             </div>
 
                         </div>
 
                     </div>
                 </div>
-                <div class="col-md-6 ">
-                    <img class="pitsakarp img-fluid" src="Graafika/pitsakarp.png">
+                <div class="col-md-6">
+                    <img class="pitsakarp" src="Graafika/pitsakarp.png">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="populaarne bg-red text-white">HETKEL POPULAARNE:</div>
+                <div class="populaarne">HETKEL POPULAARNE:</div>
             </div>
             <div class="row justify-content-center">
-                <div class="col-md-3">
-                    <div class="card bg-faded-white">
+                <div class="card-deck">
+                    <div class="card">
                         <div class="card-block">
                             <h4 class="card-title">OLIVE</h4>
                         </div>
-                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/1.png" alt="Card image cap">
+                        <img class="card-img-bottom" src="Graafika/pitsad/1.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-faded-white">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/2.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-faded-white">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/3.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card bg-faded-white">
-                        <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
-                        </div>
-                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/4.png" alt="Card image cap">
-                        <div class="card-block lisakorvi">
-                            lisa ostukorvi
-                        </div>
-                    </div>
-                </div>
 
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom" src="Graafika/pitsad/2.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom" src="Graafika/pitsad/3.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-block">
+                            <h4 class="card-title">OLIVE</h4>
+                        </div>
+                        <img class="card-img-bottom" src="Graafika/pitsad/4.png" alt="Card image cap">
+                        <div class="card-block lisakorvi">
+                            lisa ostukorvi
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
