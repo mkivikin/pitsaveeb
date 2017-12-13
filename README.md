@@ -11,7 +11,7 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	4) loeb andmebaasist komponente
 	5) kasutaja näeb oma valmistatud pitsat
 	6) näitab esilehel viimati valminud pitsat
-	Need tegemata
+	-)-----------------------------------------
 	7) kasutaja näeb oma valitud komponente ja nende hindu listina kõrval, saab neid eemaldada
 	8) lisab pitsad andmebaasi
 	9) kasutaja näeb kogu pitsa hinda
