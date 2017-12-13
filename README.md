@@ -1,6 +1,6 @@
-# pitsaveeb
+## pitsaveeb
 
-#liikmed: Marek Kivikink, Tuule Põldsaar, Katri Palo
+##liikmed: Marek Kivikink, Tuule Põldsaar, Katri Palo
 #Proovime luua pitsatellimise lehte, kus kliendil on võimalik enda pitsa kokku panna ja siis näha, milline see välja näeb.
 #Meie rakenduse sihtgrupiks on näljased inimesed
 ![alt text] (https://i.imgur.com/71gSlr6.jpg)
