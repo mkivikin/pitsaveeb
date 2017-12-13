@@ -44,33 +44,34 @@
 						</div>
                     </div>
                 </div>
+                <a href="main.php"
                 <div class="nav-logo">
-
                     <img src="Graafika/logo.png">
                 </div>
+                </a>
             </nav>
 
         </div>
     </section>
     <section class="main-section">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="valmistamine col-md-6">
                     <div class="row">
-                        <div class="tee-pitsa col-md-12">
+                        <div class="tee-pitsa col-md-12 bg-red text-white">
 							<?php 
 							
 							//pitsavalimise lingi anname siis, kui kasutaja on sisse loginud 
 							if(isset($_SESSION["userID"])) {
-								echo '<div><a href="test.php">TEE OMA PITSA VALMIS SIIN<a></div>';
+								echo '<div><a class="text-white" href="test.php">TEE OMA PITSA VALMIS SIIN<a></div>';
 							}else{
-								echo '<div>Pitsa valimiseks logi sisse!</div>';
+								echo '<div><a class="text-white">Pitsa valimiseks logi sisse!<a></div>';
 							}
 							?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="viimati-valmistatud col-md-12">
+                        <div class="viimati-valmistatud col-md-12 bg-faded-white">
                             Viimati valmistatud pitsa:
                             <div class="col-md-12">                  
 								<?php 
@@ -91,50 +92,53 @@
 
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 ">
                     <img class="pitsakarp" src="Graafika/pitsakarp.png">
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="populaarne">HETKEL POPULAARNE:</div>
+                <div class="populaarne bg-red text-white">HETKEL POPULAARNE:</div>
             </div>
             <div class="row justify-content-center">
-                <div class="card-deck">
-                    <div class="card">
+               <div class="col-md-3">
+                    <div class="card bg-faded-white">
                         <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
+                            <h4 class="card-title">Cheezeria</h4>
                         </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/1.png" alt="Card image cap">
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/1.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
                     </div>
-
-                    <div class="card">
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
                         <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
+                            <h4 class="card-title">Olive</h4>
                         </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/2.png" alt="Card image cap">
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/2.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
                     </div>
-
-                    <div class="card">
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
                         <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
+                            <h4 class="card-title">Margherita</h4>
                         </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/3.png" alt="Card image cap">
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/3.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
                     </div>
-
-                    <div class="card">
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-faded-white">
                         <div class="card-block">
-                            <h4 class="card-title">OLIVE</h4>
+                            <h4 class="card-title">So Le Mio</h4>
                         </div>
-                        <img class="card-img-bottom" src="Graafika/pitsad/4.png" alt="Card image cap">
+                        <img class="card-img-bottom img-fluid" src="Graafika/pitsad/4.png" alt="Card image cap">
                         <div class="card-block lisakorvi">
                             lisa ostukorvi
                         </div>
