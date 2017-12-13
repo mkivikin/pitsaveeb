@@ -11,39 +11,41 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css">
+
 </head>
 <body>
-<div class="container main">
+<div class="webpage container">
     <section class="navigation">
-        <div class="container">
-            <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <nav class="navbar navbar-light bg-light text-white">
                 <div class="nav-upper">
                     <div class="nav-telli"><a>TELLI KOHE: 56942834</a></div>
                     <img class="nav-ostukorv" src="Graafika/ostukorv.png">
                 </div>
-                <div class="nav-bottom">
+                <div class="nav-bottom bg-red">
                     <div class="nav-logins">
                         <div class="nav-logins-registreeri">
 						<?php
 						if(isset($_SESSION["userID"])) {
 							echo 'Tere <b>'.$_SESSION["userName"].'</b>!';
 						}else{
-							echo '<a href= "register.php"> Registreeri </a>';
+							echo '<a href= "loginregister.php" class="text-white"> Registreeri </a>';
 						}
 						?>
 						</div>
                         <div class="nav-logins-logisisse"> 
 						<?php
 						if(isset($_SESSION["userID"])) {
-							echo '<a href= "logout.php"> LOGI VÄLJA </a>';
+							echo '<a href= "logout.php" class="text-white"> LOGI VÄLJA </a>';
 						}else{
-							echo '<a href= "login.php"> LOGI SISSE </a>';
+							echo '<a href= "loginregister.php" class="text-white"> LOGI SISSE </a>';
 						}
 						?>
 						</div>
                     </div>
                 </div>
                 <div class="nav-logo">
+
                     <img src="Graafika/logo.png">
                 </div>
             </nav>
