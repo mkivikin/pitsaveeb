@@ -2,12 +2,10 @@
 	require("../../config.php");
 	require("functions.php");
 	if(!(isset ($_SESSION["userID"]))){
-		header("Location: login.php");
+		header("Location: loginregister.php");
 		exit();
 	}
 	//echo $_SESSION["userID"];
-	$name = "test";
-	echo(loadPizza($_SESSION["userID"]));
 	if (isset ($_POST["pizzaCreate"])) {
 		$toppings = $_POST['toppings'];
 			/*if(empty($toppings)) {
@@ -23,6 +21,7 @@
 			header("location:createpizza.php");
 	}
 	$toppingIDs = loadComponents($_SESSION["userID"]);
+	
 	function loadComponents($userid) {
 		$database = "if17_marek6";
 		$notice = [];
@@ -61,7 +60,7 @@
 			$stmt->bind_result($toppingID, $toppingName, $toppingPrice);
 			$stmt->execute();
 			while ($stmt->fetch()) {
-				$notice .= $toppingName .' $' .$toppingPrice. '<br>';
+				$notice .= $toppingName .' $' .$toppingPrice;
 			}
 			} else {
 				createPizza($userid);
@@ -95,6 +94,7 @@
 			echo $pizzaID;
 			$stmt->close();
 			foreach ($toppings as $key=>$value) {
+				//$stmt = mysqli->prepare("SELECT topping_id ");
 				$stmt = $mysqli->prepare("INSERT INTO toppingonpizza (topping_id, pizza_id) VALUES (?, ?)");
 				$topping = $toppings[$key];
 				$stmt->bind_param("ii", $topping, $pizzaID);
@@ -171,6 +171,7 @@
 	</div><!-- end toppings-outer -->
 	<div class="pizza-outer">
 		<div class="pizza-inner">
+				<?php echo(loadPizza($_SESSION["userID"])); ?>
 			<a href="toppings/bottom.png"><img src="toppings/bottom.png" height="550" /></a>
 			<input class="pizzaName" name ="pizzaCreateName" type="text" placeholder="Nimeta Pizza">
 			<input class="pizzabuttons" name ="pizzaCreate" type="submit" value="Loo Pizza">
