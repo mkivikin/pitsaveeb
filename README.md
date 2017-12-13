@@ -26,8 +26,10 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 ### Marek: 
 	1) Andmebaasidest info kättesaamine
 	2) Tsükliline andmete sisestamine andmebaasi
-	3) Edaspidi uurin teostatavust hetkeste teadmiste põhjal.
-	4) Rohkem oleks vaja omavahel suhelda
+	3) listidega tegelemine
+	4) Edaspidi uurin teostatavust hetkeste teadmiste põhjal.
+	5) Rohkem oleks vaja omavahel suhelda
+	5) Githubi paremini kasutama & Githubi readme'd kirjutama
 
 ### Tuule:
 
