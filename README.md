@@ -11,7 +11,6 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	4) loeb andmebaasist komponente
 	5) kasutaja näeb oma valmistatud pitsat
 	6) näitab esilehel viimati valminud pitsat
-	-)-----------------------------------------
 	7) kasutaja näeb oma valitud komponente ja nende hindu listina kõrval, saab neid eemaldada
 	8) lisab pitsad andmebaasi
 	9) kasutaja näeb kogu pitsa hinda
@@ -19,6 +18,7 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	11) kasutaja saab esitada tellimust
 	12) pealehe all kuvab enim tellitud pitsasid ja nendele vajutades lisab ta selle ostukorvi
 	13) pitsadele saab arvustusi jätta
+7-13 puudu
 ![alt text](https://i.imgur.com/Nr3cU2V.jpg)
 
 ## Mida õppisid juurde?
