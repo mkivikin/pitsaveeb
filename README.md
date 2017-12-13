@@ -5,8 +5,8 @@
 #Meie rakenduse sihtgrupiks on näljased inimesed
 ![alt text] (https://i.imgur.com/71gSlr6.jpg)
 #Funktsionaalsuse prioriteedi järjekord:
-#	1) peab saama sisse logida&registreerida
-#	2) peab saama pealehel navigeerida
+#   1 peab saama sisse logida&registreerida
+#	2. peab saama pealehel navigeerida
 #	3) peab normaalne välja nägema
 #	4) loeb andmebaasist komponente
 #	5) kasutaja näeb oma valmistatud pitsat
