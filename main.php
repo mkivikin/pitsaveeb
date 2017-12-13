@@ -23,7 +23,15 @@
                 </div>
                 <div class="nav-bottom">
                     <div class="nav-logins">
-                        <div class="nav-logins-registreeri">registreeri</div>
+                        <div class="nav-logins-registreeri">
+						<?php
+						if(isset($_SESSION["userID"])) {
+							echo 'Tere <b>'.$_SESSION["userName"].'</b>!';
+						}else{
+							echo '<a href= "register.php"> Registreeri </a>';
+						}
+						?>
+						</div>
                         <div class="nav-logins-logisisse"> 
 						<?php
 						if(isset($_SESSION["userID"])) {
