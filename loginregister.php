@@ -294,7 +294,7 @@ function test_input($data) {
                                 <span style="color:red" ><?php echo $notice, $loginPasswordError; ?></span>
                                 <span><?php echo $success; ?></span>
                                 <div class="form-group">
-                                    <label for="logisisse-email">Email</label>
+                                    <label for="logisisse-email">Kasutajanimi</label>
                                     <input type="text" class="form-control" id="logisisse-email" placeholder="" name="loginUsername" value="<?php echo $loginUser; ?>">
                                 </div>
                                 <div class="form-group">
@@ -304,13 +304,13 @@ function test_input($data) {
 
                                 
 
-                            </form>
+                            
                         </div>
                     </div>
                     <div class="row">
                             
                             <button class="btn btn-primary btn-red full" id="loginButton" name="signinButton" type="submit" value="Logi sisse">Logi sisse</button>
-                        
+                        </form>
                     </div>
                 </div>
 

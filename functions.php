@@ -35,7 +35,7 @@ function loginFunction($user, $password) {
 		$stmt->execute();
 		while ($stmt->fetch()) {
 			//<a href="toppings/". $toppingpng .><img src="Graafika/pizza_create_pics/meat/sausage.png" height="190" /></a>
-			$notice .= '<a href="?topping=' .$toppingpng .'"><img src ="toppings/' .$toppingpng .'" height="250" /></a>';
+			$notice .= '<a href="?topping=' .$toppingpng .'"><img src ="toppings/' .$toppingpng .'" height="190" /></a>';
 		}
 		$mysqli->close();
 		$stmt->close();
