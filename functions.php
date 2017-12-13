@@ -14,7 +14,7 @@ function loginFunction($user, $password) {
 				$_SESSION["userID"] = $idDb;
 				$_SESSION["userName"] = $userDb; 
 				$_SESSION["userRank"] = $rankDb;
-				header("Location: test.php");
+				header("Location: main.php");
 				exit();
 			} else {
 				$notice = "Teie sisestatud parool või kasutajanimi on vale";

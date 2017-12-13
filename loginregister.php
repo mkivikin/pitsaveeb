@@ -118,14 +118,12 @@ function register_function($userName, $password, $email, $firstName, $lastName, 
         $stmt->bind_param("ssssisss", $userName, $firstName, $lastName, $phone, $gender, $email, $password, $birthday);
         if ($stmt->execute()) {
             $notice = "Registreerimine õnnestus";
-            header("Location: login.php?success=true");
         } else {
             $notice = "Registreerumine ebaõnnestus";
         }
         $stmt->close();
         $mysqli->close();
-        header("Location: login.php");
-        exit();
+		return $notice;
 }
 function test_input($data) {
         $data = trim($data); //eemaldab lõpust tühiku
