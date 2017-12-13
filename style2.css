@@ -26,6 +26,10 @@ body {
     color: #ffffff;
 }
 
+.text-red {
+    color: #900c0c;
+}
+
 .bg-red {
     background-color: rgba(86,8,8, 0.9);
 }
@@ -90,11 +94,13 @@ body {
 
     padding-right: 1em;
     color: #900c0c;
+    text-decoration: none;
 }
-
 
 .nav-logins-logisisse{
     padding-right: 1em;
+    color: #ffffff;
+    text-decoration: none;
 }
 
 .nav-logo {
