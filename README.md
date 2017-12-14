@@ -38,4 +38,9 @@ Meie rakenduse sihtgrupiks on näljased inimesed
 	4) Muidu oli lahe proovida koostööna veebilehte luua. Erinevus on päris suur, kui teha midagi üksi või mitmekesi.
 
 ### Katri:
+	1) Andmebaasiga suhtlemist
+	2) Piltide kokkupanemisega seonduvat
+	3) Sessioonimuutujatega töötamine
+	4) Kujundusega ise ei töötanud, kuid uurides kursusekaaslaste tööd, sain parema pildi ka sellest
+	
 
